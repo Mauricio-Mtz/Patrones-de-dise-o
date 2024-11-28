@@ -1,0 +1,22 @@
+{
+  "motorola": [
+    {
+      "brand": "Motorola",
+      "memory": "23",
+      "price": "3000"
+    }
+  ],
+  "nokia": [
+    {
+      "brand": "Nokia",
+      "memory": "12",
+      "price": "2000"
+    },
+    {
+      "brand": "Nokia",
+      "memory": "45",
+      "price": "7000"
+    }
+  ],
+  "samsung": []
+}

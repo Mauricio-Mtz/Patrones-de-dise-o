@@ -1,0 +1,25 @@
+{
+  "motorola": [
+    {
+      "brand": "Motorola",
+      "memory": "motorola",
+      "price": "12",
+      "resistance": "loud"
+    },
+    {
+      "brand": "Motorola",
+      "memory": "motorola",
+      "price": "23",
+      "resistance": "loud"
+    }
+  ],
+  "nokia": [
+    {
+      "brand": "Nokia",
+      "memory": "nokia",
+      "price": "2300",
+      "resistance": "indestructible"
+    }
+  ],
+  "samsung": []
+}

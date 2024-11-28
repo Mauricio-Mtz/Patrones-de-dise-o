@@ -1,0 +1,34 @@
+{
+  "motorola": [],
+  "nokia": [
+    {
+      "brand": "Nokia",
+      "memory": "12",
+      "price": "2000"
+    },
+    {
+      "brand": "Nokia",
+      "memory": "12",
+      "price": "2000",
+      "accessories": [
+        {
+          "name": "Auriculares Nokia"
+        },
+        {
+          "name": "cargador"
+        }
+      ]
+    },
+    {
+      "brand": "Nokia",
+      "memory": "89",
+      "price": "4000",
+      "accessories": [
+        {
+          "name": "Auriculares Nokia"
+        }
+      ]
+    }
+  ],
+  "samsung": []
+}

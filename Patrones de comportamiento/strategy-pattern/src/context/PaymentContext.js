@@ -1,28 +1,18 @@
 class PaymentContext {
-  /**
-   * Constructor for Payment Context
-   * @param {PaymentStrategy} paymentStrategy - Payment strategy to use
-   */
+  // Constructor para inicializar la estrategia de pago
   constructor(paymentStrategy) {
     this.paymentStrategy = paymentStrategy
   }
 
-  /**
-   * Set payment strategy dynamically
-   * @param {PaymentStrategy} paymentStrategy - New payment strategy
-   */
+  // Establece una nueva estrategia de pago de forma dinámica
   setPaymentStrategy(paymentStrategy) {
     this.paymentStrategy = paymentStrategy
   }
 
-  /**
-   * Execute payment using current strategy
-   * @param {number} amount - Payment amount
-   * @returns {Object} Payment result
-   */
+  // Ejecuta el pago utilizando la estrategia actual
   executePayment(amount) {
     if (!this.paymentStrategy) {
-      throw new Error('No payment strategy set')
+      throw new Error('No se ha establecido una estrategia de pago')
     }
 
     return this.paymentStrategy.pay(amount)

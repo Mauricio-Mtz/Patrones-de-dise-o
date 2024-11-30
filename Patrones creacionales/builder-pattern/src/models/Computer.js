@@ -1,4 +1,3 @@
-// src/models/Computer.js
 class Computer {
     constructor(builder) {
       this.cpu = builder.cpu || 'No especificado';

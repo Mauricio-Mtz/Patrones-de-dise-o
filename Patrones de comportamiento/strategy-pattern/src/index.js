@@ -9,7 +9,6 @@ const rl = readline.createInterface({
   output: process.stdout,
 })
 
-// Payment context
 const paymentContext = new PaymentContext(null)
 
 function menu() {
@@ -125,5 +124,5 @@ function processPayment(amount) {
   }
 }
 
-// Start menu
+// Iniciar menú
 menu()

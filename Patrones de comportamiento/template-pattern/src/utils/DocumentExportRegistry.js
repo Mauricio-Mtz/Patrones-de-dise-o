@@ -1,37 +1,25 @@
-// src/utils/DocumentExportRegistry.js
 class DocumentExportRegistry {
+  // Inicializa un objeto vacío para almacenar exportadores
   constructor() {
     this.exporters = {}
   }
 
-  /**
-   * Register a new exporter
-   * @param {string} type - Export type
-   * @param {Object} exporter - Exporter instance
-   * @returns {DocumentExportRegistry} Current instance for chaining
-   */
+  // Registra un nuevo exportador con un tipo específico
   register(type, exporter) {
     this.exporters[type] = exporter
     return this
   }
 
-  /**
-   * Get an exporter by type
-   * @param {string} type - Export type
-   * @returns {Object} Requested exporter
-   */
+  // Obtiene un exportador por su tipo
   getExporter(type) {
     const exporter = this.exporters[type]
     if (!exporter) {
-      throw new Error(`No exporter found for type: ${type}`)
+      throw new Error(`No se encontró exportador para el tipo: ${type}`)
     }
     return exporter
   }
 
-  /**
-   * List registered exporter types
-   * @returns {string[]} List of registered exporter types
-   */
+  // Lista los tipos de exportadores registrados
   listExporterTypes() {
     return Object.keys(this.exporters)
   }

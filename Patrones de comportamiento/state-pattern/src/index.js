@@ -18,14 +18,14 @@ function createAthlete() {
     athlete.setState(new TrainingState())
     athleteRegistry.register(athlete)
     console.log(`Athlete ${name} created and started training.`)
-    mainMenu()
+    main()
   })
 }
 
 function manageAthleteState() {
   if (athleteRegistry.athletes.length === 0) {
     console.log('No athletes available. Create an athlete first.')
-    return mainMenu()
+    return main()
   }
 
   console.log('\n=== Select Athlete ===')
@@ -36,7 +36,7 @@ function manageAthleteState() {
 
     if (!athlete) {
       console.log('Invalid athlete selection.')
-      return mainMenu()
+      return main()
     }
 
     console.log('\n=== Athlete State Management ===')
@@ -65,12 +65,12 @@ function manageAthleteState() {
         default:
           console.log('Invalid action.')
       }
-      mainMenu()
+      main()
     })
   })
 }
 
-function mainMenu() {
+function main() {
   console.log('\n=== Athlete State Management System ===')
   console.log('1. Create Athlete')
   console.log('2. Manage Athlete State')
@@ -89,10 +89,10 @@ function mainMenu() {
         break
       default:
         console.log('Invalid option.')
-        mainMenu()
+        main()
     }
   })
 }
 
-console.log('=== Athlete State Management System ===')
-mainMenu()
+// Iniciar menú
+main()

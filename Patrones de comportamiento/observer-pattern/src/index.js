@@ -11,12 +11,12 @@ const rl = readline.createInterface({
 
 const weatherData = new WeatherData();
 
-// Create display observers
+// Crear observadores
 const currentDisplay = new CurrentConditionsDisplay();
 const statisticsDisplay = new StatisticsDisplay();
 const forecastDisplay = new ForecastDisplay();
 
-// Register observers
+// Registrar observadores
 weatherData
   .registerObserver(currentDisplay)
   .registerObserver(statisticsDisplay)
@@ -120,5 +120,5 @@ function addObserver() {
   });
 }
 
-// Start menu
+// Iniciar menú
 menu();

@@ -1,4 +1,3 @@
-// src/observers/ForecastDisplay.js
 const DisplayInterface = require('./DisplayInterface')
 
 class ForecastDisplay extends DisplayInterface {

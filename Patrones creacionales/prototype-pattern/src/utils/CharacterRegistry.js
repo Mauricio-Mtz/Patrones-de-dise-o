@@ -1,4 +1,3 @@
-// src/utils/CharacterRegistry.js
 class CharacterRegistry {
   constructor() {
     this.characters = {}

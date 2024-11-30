@@ -1,4 +1,3 @@
-// src/prototypes/CharacterPrototype.js
 class CharacterPrototype {
   constructor(name, health, level, weapons = []) {
     this.name = name

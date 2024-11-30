@@ -1,4 +1,3 @@
-// src/builders/ComputerBuilder.js
 const Computer = require('../models/Computer');
 
 class ComputerBuilder {

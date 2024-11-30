@@ -1,13 +1,5 @@
-const PaymentStrategy = require('./PaymentStrategy')
-
 class BankTransferStrategy extends PaymentStrategy {
-  /**
-   * Constructor for Bank Transfer Payment
-   * @param {string} accountName - Account holder name
-   * @param {string} bankName - Bank name
-   * @param {string} accountNumber - Bank account number
-   * @param {string} routingNumber - Bank routing number
-   */
+  // Constructor para inicializar detalles de transferencia bancaria
   constructor(accountName, bankName, accountNumber, routingNumber) {
     super()
     this.accountName = accountName
@@ -15,15 +7,12 @@ class BankTransferStrategy extends PaymentStrategy {
     this.accountNumber = accountNumber
     this.routingNumber = routingNumber
   }
-
-  /**
-   * Validate bank account details
-   * @returns {boolean} Whether bank account is valid
-   */
+ 
+  // Valida los detalles de la cuenta bancaria
   validate() {
     const accountNumberRegex = /^\d{10,12}$/
     const routingNumberRegex = /^\d{9}$/
-
+ 
     return (
       this.accountName.trim().length > 0 &&
       this.bankName.trim().length > 0 &&
@@ -31,34 +20,30 @@ class BankTransferStrategy extends PaymentStrategy {
       routingNumberRegex.test(this.routingNumber)
     )
   }
-
-  /**
-   * Process bank transfer payment
-   * @param {number} amount - Payment amount
-   * @returns {Object} Payment result
-   */
+ 
+  // Procesa el pago mediante transferencia bancaria
   pay(amount) {
     if (!this.validate()) {
       return {
         success: false,
-        message: 'Invalid bank account details',
+        message: 'Detalles de cuenta bancaria inválidos',
       }
     }
-
-    // Simulate payment processing
-    const processingFee = amount * 0.01 // 1% processing fee
+ 
+    // Simula procesamiento de pago
+    const processingFee = amount * 0.01 // Tarifa de procesamiento del 1%
     const totalAmount = amount + processingFee
-
+ 
     return {
       success: true,
-      message: 'Bank Transfer Payment Successful',
+      message: 'Pago por Transferencia Bancaria Exitoso',
       amount: amount,
       processingFee: processingFee,
       totalAmount: totalAmount,
-      paymentMethod: 'Bank Transfer',
+      paymentMethod: 'Transferencia Bancaria',
       accountLastFourDigits: this.accountNumber.slice(-4),
     }
   }
-}
-
-module.exports = BankTransferStrategy
+ }
+ 
+ module.exports = BankTransferStrategy

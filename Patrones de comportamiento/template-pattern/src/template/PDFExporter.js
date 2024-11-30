@@ -1,57 +1,38 @@
-// src/template/PDFExporter.js
 const AbstractDocumentExporter = require('./AbstractDocumentExporter')
 
 class PDFExporter extends AbstractDocumentExporter {
-  /**
-   * Additional validation specific to PDF export
-   * @param {Object} document - Document to validate
-   */
+  // Validación adicional específica para exportación PDF
   validateDocument(document) {
     super.validateDocument(document)
     if (document.content.length > 5000) {
-      throw new Error('PDF export supports documents up to 5000 characters')
+      throw new Error(
+        'Exportación PDF soporta documentos hasta 5000 caracteres'
+      )
     }
   }
 
-  /**
-   * Prepare content for PDF export
-   * @param {Object} document - Document to prepare
-   * @returns {string} Prepared content
-   */
+  // Prepara el contenido para exportación PDF
   prepareContent(document) {
-    // Simulate content preparation for PDF
+    // Simulación de preparación de contenido para PDF
     return document.content.replace(/\n/g, ' ').trim()
   }
 
-  /**
-   * Format content for PDF
-   * @param {string} content - Content to format
-   * @returns {string} Formatted content
-   */
+  // Formatea el contenido para PDF
   formatContent(content) {
-    // Simulate PDF formatting
-    return `[PDF HEADER]\n${content}\n[PDF FOOTER]`
+    return `[ENCABEZADO PDF]\n${content}\n[PIE DE PÁGINA PDF]`
   }
 
-  /**
-   * Write PDF export
-   * @param {string} content - Formatted content to export
-   * @returns {string} Exported PDF content
-   */
+  // Exporta el contenido en formato PDF
   writeExport(content) {
-    // Simulate PDF export
     return content
   }
 
-  /**
-   * Override log method with PDF-specific logging
-   * @param {Object} document - Exported document
-   */
+  // Registra detalles específicos de la exportación PDF
   logExport(document) {
     console.log(
-      `PDF Export: ${document.title || 'Untitled'} (${
+      `Exportación PDF: ${document.title || 'Sin título'} (${
         document.content.length
-      } chars)`
+      } caracteres)`
     )
   }
 }

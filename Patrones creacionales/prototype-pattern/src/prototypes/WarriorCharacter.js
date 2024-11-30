@@ -1,4 +1,3 @@
-// src/prototypes/WarriorCharacter.js
 const CharacterPrototype = require('./CharacterPrototype')
 
 class WarriorCharacter extends CharacterPrototype {

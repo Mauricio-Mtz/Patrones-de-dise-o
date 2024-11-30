@@ -1,4 +1,3 @@
-// src/observers/StatisticsDisplay.js
 const DisplayInterface = require('./DisplayInterface')
 
 class StatisticsDisplay extends DisplayInterface {

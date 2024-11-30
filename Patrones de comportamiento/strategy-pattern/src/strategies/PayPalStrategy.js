@@ -1,21 +1,14 @@
 const PaymentStrategy = require('./PaymentStrategy');
 
 class PayPalStrategy extends PaymentStrategy {
-  /**
-   * Constructor for PayPal Payment
-   * @param {string} email - PayPal email
-   * @param {string} password - PayPal password
-   */
+  // Constructor para pago PayPal
   constructor(email, password) {
     super();
     this.email = email;
     this.password = password;
   }
 
-  /**
-   * Validate PayPal account
-   * @returns {boolean} Whether PayPal account is valid
-   */
+  // Valida la cuenta de PayPal
   validate() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return (
@@ -24,11 +17,7 @@ class PayPalStrategy extends PaymentStrategy {
     );
   }
 
-  /**
-   * Process PayPal payment
-   * @param {number} amount - Payment amount
-   * @returns {Object} Payment result
-   */
+  // Procesa el pago de PayPal
   pay(amount) {
     if (!this.validate()) {
       return {
@@ -37,7 +26,7 @@ class PayPalStrategy extends PaymentStrategy {
       };
     }
 
-    // Simulate payment processing
+    // Simula procesamiento de pago
     const processingFee = amount * 0.025; // 2.5% processing fee
     const totalAmount = amount + processingFee;
 

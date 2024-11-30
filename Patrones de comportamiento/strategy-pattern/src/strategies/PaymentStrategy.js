@@ -1,17 +1,10 @@
 class PaymentStrategy {
-  /**
-   * Process payment
-   * @param {number} amount - Payment amount
-   * @returns {Object} Payment result
-   */
+  // Procesa el pago
   pay(amount) {
     throw new Error('Subclass must implement abstract method pay()')
   }
 
-  /**
-   * Validate payment method
-   * @returns {boolean} Whether payment method is valid
-   */
+  // Valida el método de pago
   validate() {
     throw new Error('Subclass must implement abstract method validate()')
   }

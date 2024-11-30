@@ -1,4 +1,3 @@
-// src/observers/CurrentConditionsDisplay.js
 const DisplayInterface = require('./DisplayInterface')
 
 class CurrentConditionsDisplay extends DisplayInterface {

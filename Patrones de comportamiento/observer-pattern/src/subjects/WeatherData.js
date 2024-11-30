@@ -1,4 +1,3 @@
-// src/subject/WeatherData.js
 class WeatherData {
   constructor() {
     this.observers = []
@@ -7,39 +6,26 @@ class WeatherData {
     this.pressure = 0
   }
 
-  /**
-   * Register a new observer
-   * @param {Object} observer - Observer to be registered
-   */
+  // Registra un nuevo observador
   registerObserver(observer) {
     this.observers.push(observer)
     return this
   }
 
-  /**
-   * Remove an existing observer
-   * @param {Object} observer - Observer to be removed
-   */
+  // Elimina un observador existente
   removeObserver(observer) {
     this.observers = this.observers.filter((obs) => obs !== observer)
     return this
   }
 
-  /**
-   * Notify all registered observers about weather changes
-   */
+  // Notifica a todos los observadores registrados sobre cambios climáticos
   notifyObservers() {
     this.observers.forEach((observer) =>
       observer.update(this.temperature, this.humidity, this.pressure)
     )
   }
 
-  /**
-   * Set new weather measurements and notify observers
-   * @param {number} temperature - New temperature value
-   * @param {number} humidity - New humidity value
-   * @param {number} pressure - New pressure value
-   */
+  // Establece nuevas mediciones climáticas y notifica a los observadores
   measurementsChanged(temperature, humidity, pressure) {
     this.temperature = temperature
     this.humidity = humidity

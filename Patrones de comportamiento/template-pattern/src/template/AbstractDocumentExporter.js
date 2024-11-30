@@ -1,10 +1,5 @@
-// src/template/AbstractDocumentExporter.js
 class AbstractDocumentExporter {
-  /**
-   * Template method defining the algorithm for document export
-   * @param {Object} document - Document to be exported
-   * @returns {string} Exported document content
-   */
+  // Método principal que define el algoritmo de exportación de documentos
   export(document) {
     this.validateDocument(document)
     const preparedContent = this.prepareContent(document)
@@ -14,50 +9,31 @@ class AbstractDocumentExporter {
     return exportedContent
   }
 
-  /**
-   * Validate document before export (must be implemented by subclasses)
-   * @param {Object} document - Document to validate
-   * @throws {Error} If document is invalid
-   */
+  // Valida el documento antes de exportar
   validateDocument(document) {
     if (!document || !document.content) {
-      throw new Error('Invalid document: Content is required')
+      throw new Error('Documento inválido: Se requiere contenido')
     }
   }
 
-  /**
-   * Prepare content for export (to be overridden by subclasses)
-   * @param {Object} document - Document to prepare
-   * @returns {string} Prepared content
-   */
+  // Prepara el contenido para exportación (para ser sobreescrito)
   prepareContent(document) {
     return document.content
   }
 
-  /**
-   * Format content (to be overridden by subclasses)
-   * @param {string} content - Content to format
-   * @returns {string} Formatted content
-   */
+  // Formatea el contenido (para ser sobreescrito)
   formatContent(content) {
     return content
   }
 
-  /**
-   * Write export (to be overridden by subclasses)
-   * @param {string} content - Formatted content to export
-   * @returns {string} Exported content
-   */
+  // Método de exportación (debe ser implementado por subclases)
   writeExport(content) {
-    throw new Error('Subclass must implement abstract method writeExport()')
+    throw new Error('La subclase debe implementar el método writeExport()')
   }
 
-  /**
-   * Log export details (optional hook method)
-   * @param {Object} document - Exported document
-   */
+  // Registra los detalles de la exportación
   logExport(document) {
-    console.log(`Document exported: ${document.title || 'Untitled'}`)
+    console.log(`Documento exportado: ${document.title || 'Sin título'}`)
   }
 }
 

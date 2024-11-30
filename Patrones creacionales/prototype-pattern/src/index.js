@@ -1,4 +1,3 @@
-// index.js
 const readline = require('readline');
 const CharacterRegistry = require('./utils/CharacterRegistry');
 const WarriorCharacter = require('./prototypes/WarriorCharacter');
